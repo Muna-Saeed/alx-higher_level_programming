@@ -7,8 +7,8 @@ class Node:
     """Initializes a Node instance."""
 
     def __init__(self, data, next_node=None):
-        self.data = data
-        self.next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
     """Retrieves the data value of the node."""
 
