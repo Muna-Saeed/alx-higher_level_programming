@@ -71,7 +71,6 @@ Please refer to the source code file `102-python.c` for the implementation detai
 
 Clone the repository from GitHub:
 git clone https://github.com/Muna-Saeed/alx-higher_level_programming.git
-Copy
 
 ## Usage
 
