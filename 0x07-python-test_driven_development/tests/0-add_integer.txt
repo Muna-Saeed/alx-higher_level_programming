@@ -1,0 +1,26 @@
+"""
+This file contains tests for the add_integer function.
+======================================================
+
+First import add_integer from the 0-add_integer module:
+-------------------------------------------------------
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Basic cases:
+
+>>> add_integer(3, 5)
+8
+>>> add_integer(-10, 7)
+-3
+>>> add_integer(-5, -8)
+-13
+>>> add_integer(2.5, 3.8)
+5
+>>> add_integer(4, "School")  #doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+TypeError: a must be an integer or float
+>>> add_integer(None, 10)  #doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+TypeError: a must be an integer or float
+"""
