@@ -1,0 +1,64 @@
+"""
+This file contains tests for the text_indentation function.
+==========================================================
+
+First import text_indentation from the 5-text_indentation module:
+----------------------------------------------------------------
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Basic cases:
+------------
+
+>>> text = "Hello. How are you? I'm fine. Thank you."
+>>> text_indentation(text)
+Hello.
+
+How are you?
+
+I'm fine.
+
+Thank you.
+
+>>> text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra euismod lacus, et commodo odio semper vitae."
+>>> text_indentation(text)
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Sed pharetra euismod lacus, et commodo odio semper vitae.
+
+>>> text = "One line without punctuation"
+>>> text_indentation(text)
+One line without punctuation
+
+Handling leading/trailing spaces:
+---------------------------------
+
+>>> text = "   Hello.   "
+>>> text_indentation(text)
+Hello.
+
+>>> text = "   Hello. How are you?   "
+>>> text_indentation(text)
+Hello.
+
+How are you?
+
+>>> text = "   Hello. How are you?   I'm fine. Thank you.   "
+>>> text_indentation(text)
+Hello.
+
+How are you?
+
+I'm fine.
+
+Thank you.
+
+Invalid input:
+--------------
+
+>>> text = 123  # Invalid input, should raise TypeError
+>>> text_indentation(text)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+"""
