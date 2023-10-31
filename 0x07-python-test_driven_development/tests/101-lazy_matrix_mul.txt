@@ -1,0 +1,32 @@
+"""
+This file contains tests for the lazy_matrix_mul function.
+
+First, install NumPy module if not already installed:
+-------------------------------------------------------
+
+$ pip3 install numpy==1.15.0
+
+Then, import lazy_matrix_mul from the 101-lazy_matrix_mul module:
+----------------------------------------------------------------
+
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Basic cases:
+------------
+
+The function lazy_matrix_mul performs matrix multiplication on two matrices using NumPy.
+
+Test case 1:
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 2], [3, 4]]
+>>> lazy_matrix_mul(m_a, m_b)
+array([[ 7, 10],
+       [15, 22]])
+
+Test case 2:
+>>> m_a = [[1, 2]]
+>>> m_b = [[3, 4], [5, 6]]
+>>> lazy_matrix_mul(m_a, m_b)
+array([[13, 16]])
+
+"""
