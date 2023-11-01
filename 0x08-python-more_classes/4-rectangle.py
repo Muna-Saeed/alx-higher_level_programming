@@ -54,19 +54,6 @@ class Rectangle:
             return rect_str.rstrip()
 
     def __repr__(self):
-        return f"Rectangle({self.__width}, {self.__height})"
-
-    def __eq__(self, other):
-        if isinstance(other, Rectangle):
-            return self.__width == other.width and self.__height == other.height
-        return False
-
-    def __lt__(self, other):
-        if isinstance(other, Rectangle):
-            return self.area() < other.area()
-        return NotImplemented
-
-    def __gt__(self, other):
-        if isinstance(other, Rectangle):
-            return self.area() > other.area()
-        return NotImplemented
+        rect_str = "Rectangle(" + str(self.__width)
+        rect_str += ", " + str(self.__height) + ")"
+        return rect_str
