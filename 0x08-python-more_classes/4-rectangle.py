@@ -3,6 +3,8 @@
 
 
 class Rectangle:
+    """Represent a rectangle."""
+
     def __init__(self, width=0, height=0):
         """Initialize the rectangle with the given width and height."""
         self.width = width
@@ -38,6 +40,8 @@ class Rectangle:
         return self.__width * self.__height
 
     def perimeter(self):
+        if self.__width == 0 or self.__height == 0:
+            return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
