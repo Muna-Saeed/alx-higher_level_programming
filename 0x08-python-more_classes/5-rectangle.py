@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This rectangle module provides a rectangle class"""
 
 
 class Rectangle:
