@@ -3,9 +3,7 @@
 
 
 class Rectangle:
-    """
-    Class that defines a rectangle.
-    """
+    """ Class that defines a rectangle."""
 
     number_of_instances = 0
     print_symbol = "#"
@@ -70,12 +68,13 @@ class Rectangle:
 
     def __str__(self):
         """
-        Returns a string representation of the rectangle using print_symbol.
-        """
+        Returns a string representation of the rectangle using print_symbol."""
         if self.width == 0 or self.height == 0:
             return ""
-        symbol = str(self.print_symbol)
-        return (symbol * self.width + "\n") * self.height
+        rectangle_str = ""
+        for _ in range(self.__height):
+            rectangle_str += "#" * self.__width + "\n"
+        return rectangle_str[:-1]
 
     def __repr__(self):
         """
