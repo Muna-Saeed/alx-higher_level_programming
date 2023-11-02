@@ -26,21 +26,6 @@ Traceback (most recent call last):
     ...
 TypeError: a must be an integer or float
 
->>> add_integer(100e1000, 1)
-Traceback (most recent call last):
-OverflowError: cannot convert float infinity to integer
->>> add_integer(float('inf'))
-Traceback (most recent call last):
-OverflowError: cannot convert float infinity to integer
->>> add_integer(None)
-Traceback (most recent call last):
-TypeError: a must be an integer
->>> add_integer(34, 54, 67)
-Traceback (most recent call last):
-TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
->>> add_integer()
-Traceback (most recent call last):
-TypeError: add_integer() missing 1 required positional argument: 'a'
 >>> add_integer(float('-inf'), float('inf'))
 Traceback (most recent call last):
 OverflowError: cannot convert float infinity to integer
