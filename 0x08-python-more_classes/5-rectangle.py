@@ -49,7 +49,6 @@ class Rectangle:
     def __str__(self):
         """
         Return a string representation of the rectangle.
-
         The string consists of '#' characters forming a rectangle shape.
         Each '#' represents one unit of width and height.
         """
@@ -71,4 +70,4 @@ class Rectangle:
 
     def __del__(self):
         """Print a message when the rectangle instance is deleted."""
-        print("Bye rectangle...")
+        print("Bye rectangle..."    )
