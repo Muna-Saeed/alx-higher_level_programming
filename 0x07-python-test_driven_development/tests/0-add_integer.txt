@@ -19,8 +19,10 @@ Basic cases:
 5
 >>> add_integer(4, "School")  #doctest: +IGNORE_EXCEPTION_DETAIL
 Traceback (most recent call last):
-TypeError: a must be an integer or float
+    ...
+TypeError: b must be an integer or float
 >>> add_integer(None, 10)  #doctest: +IGNORE_EXCEPTION_DETAIL
 Traceback (most recent call last):
+    ...
 TypeError: a must be an integer or float
 """
