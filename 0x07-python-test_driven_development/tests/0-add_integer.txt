@@ -27,10 +27,7 @@ Traceback (most recent call last):
 TypeError: a must be an integer or float
 >>> add_integer()
 Traceback (most recent call last):
-TypeError:  missing two arguments
->>> add_integer(2)
-Traceback (most recent call last):
-TypeError:  missing one arguments
+TypeError: add_integer() missing 1 required positional argument: 'a'
 >>> add_integer(float('-inf'), float('inf'))
 Traceback (most recent call last):
 OverflowError: cannot convert float infinity to integer
