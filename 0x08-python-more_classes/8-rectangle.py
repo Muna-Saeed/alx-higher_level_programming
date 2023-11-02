@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This rectangle module provides a rectangle class"""
 
 
 class Rectangle:
@@ -71,14 +72,16 @@ class Rectangle:
         """
         Returns a string representation of the rectangle using print_symbol.
         """
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
-        symbol = str(self.print_symbol)
-        return (symbol * self.width + "\n") * self.height
+        rectangle_str = ""
+        for _ in range(self.__height):
+            rectangle_str += "#" * self.__width + "\n"
+        return rectangle_str[:-1]
 
     def __repr__(self):
         """
-        Returns a string representation of the rectangle to recreate a new instance.
+        Returns a string representation to recreate a new instance.
         """
         return "Rectangle({}, {})".format(self.width, self.height)
 
@@ -92,7 +95,7 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
-        Returns the rectangle with the bigger or equal area between rect_1 and rect_2.
+        Returns the rectangle with bigger or equal b/n area rect_1 and rect_2.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
