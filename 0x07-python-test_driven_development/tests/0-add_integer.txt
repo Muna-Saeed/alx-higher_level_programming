@@ -25,6 +25,13 @@ TypeError: b must be an integer or float
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer or float
+
+>>> add_integer(100e1000, 1)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
 >>> add_integer(None)
 Traceback (most recent call last):
 TypeError: a must be an integer
