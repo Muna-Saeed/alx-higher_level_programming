@@ -20,8 +20,14 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    new_matrix = [
-            [round(element / div, 2) for element in row]
-            for row in matrix
-            ]
+    new_matrix = []
+    for row in matrix:
+        new_row = []
+        for element in row:
+            if not isinstance(element, (int, float)):
+                raise TypeError("matrix must be a matrix (list of lists)"
+                                "of integers/floats")
+            new_row.append(round(element / div, 2))
+        new_matrix.append(new_row)
+
     return new_matrix
