@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Prints "My name is <first_name> <last_name>"."""
+"""say_my_name module"""
 
 
 def say_my_name(first_name, last_name=""):
+    """Prints "My name is <first_name> <last_name>"."""
 
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
@@ -11,4 +12,4 @@ def say_my_name(first_name, last_name=""):
     if last_name:
         print("My name is {} {}".format(first_name, last_name))
     else:
-        print("My name is {}".format(first_name))
+        print("My name is {} ".format(first_name))
