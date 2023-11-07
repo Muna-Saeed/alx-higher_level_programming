@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import sys
 """Reads from standard input and computes metrics."""
+import sys
 
 
 def print_stats(total_size, status_counts):
