@@ -5,12 +5,12 @@ This module contains tests for the MyList class.
 First Import the MyList class
 -----------------------------
 
-MyList = __import__('1-my_list').MyList
+>>> MyList = __import__('1-my_list').MyList
 
 check if an object (my_list) is an instance of the list class then call a print_sorted method on it.
 ----------------------------------------------------------------------------------------------------
 
->>> my_list = MyList()
+>>> my_list = MyList()  # Initialize my_list before using it
 >>> isinstance(my_list, list)
 True
 >>> my_list.print_sorted()
@@ -31,7 +31,7 @@ Base cases
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
 
->>> my_list
+>>> my_list  # This should still be the original list
 [1, 4, 2, 3, 5]
 
 >>> empty_list = MyList()
@@ -41,4 +41,3 @@ Base cases
 >>> empty_list.print_sorted()
 []
 """
-
