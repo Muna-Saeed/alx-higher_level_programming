@@ -3,9 +3,17 @@ This module contains tests for the MyList class.
 ===============================================
 
 First Import the MyList class
------------------------
+-----------------------------
 
 MyList = __import__('1-my_list').MyList
+
+check if an object (my_list) is an instance of the list class then call a print_sorted method on it.
+----------------------------------------------------------------------------------------------------
+
+>>> isinstance(my_list, list)
+True
+>>> my_list.print_sorted()
+[]
 
 Base cases
 ----------
