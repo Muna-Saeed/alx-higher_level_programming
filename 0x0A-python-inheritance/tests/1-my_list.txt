@@ -7,7 +7,7 @@ First Import the MyList class
 
 >>> MyList = __import__('1-my_list').MyList
 
-check if an object (my_list) is an instance of the list class then call a print_sorted method on it.
+Check if an object (my_list) is an instance of the list class, then call a print_sorted method on it.
 ----------------------------------------------------------------------------------------------------
 
 >>> my_list = MyList()  # Initialize my_list before using it
@@ -41,4 +41,3 @@ Base cases
 >>> empty_list.print_sorted()
 []
 """
-
