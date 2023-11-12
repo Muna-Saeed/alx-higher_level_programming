@@ -1,5 +1,9 @@
+#!/usr/bin/python3
+'''Rectangle module unit tests.'''
+
 import unittest
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class TestRectangle(unittest.TestCase):
@@ -9,6 +13,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 0)
         self.assertEqual(r1.y, 0)
+        self.assertEqual(r1.id, 1)
 
         r2 = Rectangle(5, 5, 1, 2, 3)
         self.assertEqual(r2.width, 5)
