@@ -125,5 +125,42 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue(), expected_output)
 
+    def test_rectangle_update(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.height, 10)
+        self.assertEqual(r1.x, 10)
+        self.assertEqual(r1.y, 10)
+
+        r1.update(89, 2)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 10)
+        self.assertEqual(r1.x, 10)
+        self.assertEqual(r1.y, 10)
+
+        r1.update(89, 2, 3)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 10)
+        self.assertEqual(r1.y, 10)
+
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 4)
+        self.assertEqual(r1.y, 10)
+
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 4)
+        self.assertEqual(r1.y, 5)
+
 if __name__ == '__main__':
     unittest.main()
