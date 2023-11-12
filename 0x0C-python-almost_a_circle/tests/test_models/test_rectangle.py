@@ -34,6 +34,43 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.x, 2)
         self.assertEqual(r3.y, 1)
 
+    def test_rectangle_attribute_validation(self):
+        with self.assertRaises(TypeError) as cm:
+            Rectangle("10", 2)
+        self.assertEqual(str(cm.exception), "width must be an integer")
+
+        with self.assertRaises(ValueError) as cm:
+            Rectangle(-10, 2)
+        self.assertEqual(str(cm.exception), "width must be > 0")
+
+        with self.assertRaises(TypeError) as cm:
+            r = Rectangle(10, 2)
+            r.width = "10"
+        self.assertEqual(str(cm.exception), "width must be an integer")
+
+        with self.assertRaises(ValueError) as cm:
+            r = Rectangle(10, 2)
+            r.width = 0
+        self.assertEqual(str(cm.exception), "width must be > 0")
+
+        with self.assertRaises(TypeError) as cm:
+            r = Rectangle(10, 2)
+            r.x = [1, 2, 3]
+        self.assertEqual(str(cm.exception), "x must be an integer")
+
+        with self.assertRaises(ValueError) as cm:
+            r = Rectangle(10, 2)
+            r.x = -1
+        self.assertEqual(str(cm.exception), "x must be >= 0")
+
+        with self.assertRaises(TypeError) as cm:
+            Rectangle(10, 2, 3, "4")
+        self.assertEqual(str(cm.exception), "y must be an integer")
+
+        with self.assertRaises(ValueError) as cm:
+            Rectangle(10, 2, 3, -1)
+        self.assertEqual(str(cm.exception), "y must be >= 0")
+
 
 if __name__ == '__main__':
     unittest.main()
