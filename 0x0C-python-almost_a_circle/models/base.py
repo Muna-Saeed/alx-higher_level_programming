@@ -8,6 +8,7 @@ class Base:
     """
     Base class for serialization, deserialization, and drawing of rectangles and squares.
     """
+
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -35,7 +36,13 @@ class Base:
             list: The CSV row representing the instance.
         """
         if isinstance(instance, Rectangle):
-            return [instance.id, instance.width, instance.height, instance.x, instance.y]
+            return [
+                instance.id,
+                instance.width,
+                instance.height,
+                instance.x,
+                instance.y,
+            ]
         elif isinstance(instance, Square):
             return [instance.id, instance.size, instance.x, instance.y]
 
@@ -64,7 +71,7 @@ class Base:
             list_objs (list): The list of instances to serialize.
         """
         filename = cls.__name__ + ".csv"
-        with open(filename, mode='w', newline='') as file:
+        with open(filename, mode="w", newline="") as file:
             writer = csv.writer(file)
             if list_objs is not None:
                 for obj in list_objs:
@@ -80,7 +87,7 @@ class Base:
         """
         filename = cls.__name__ + ".csv"
         try:
-            with open(filename, mode='r', newline='') as file:
+            with open(filename, mode="r", newline="") as file:
                 reader = csv.reader(file)
                 instances = []
                 for row in reader:
@@ -100,7 +107,7 @@ class Base:
             list_squares (list): The list of Square instances to draw.
         """
         import turtle
-        
+
         def draw_rectangle(rectangle):
             turtle.penup()
             turtle.goto(rectangle.x, rectangle.y)

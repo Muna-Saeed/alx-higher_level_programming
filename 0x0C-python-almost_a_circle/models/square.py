@@ -52,7 +52,7 @@ class Square(Rectangle):
             *args: The list of arguments passed.
             **kwargs: The dictionary of keyworded arguments passed.
         """
-        attr_names = ['id', 'size', 'x', 'y']
+        attr_names = ["id", "size", "x", "y"]
         if args:
             for i, arg in enumerate(args):
                 if i < len(attr_names):
@@ -69,12 +69,7 @@ class Square(Rectangle):
         Returns:
             dict: The dictionary representation of the Square.
         """
-        return {
-            'id': self.id,
-            'size': self.width,
-            'x': self.x,
-            'y': self.y
-        }
+        return {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
 
     def __str__(self):
         """
