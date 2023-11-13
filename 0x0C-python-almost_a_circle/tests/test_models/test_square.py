@@ -30,6 +30,17 @@ class TestSquare(unittest.TestCase):
         s = Square(5, 2, 3, 10)
         self.assertEqual(str(s), "[Square] (10) 2/3 - 5")
 
+    def test_getter_setter_size(self):
+        s = Square(5)
+        self.assertEqual(s.size, 5)
+
+        s.size = 10
+        self.assertEqual(s.width, 10)
+        self.assertEqual(s.height, 10)
+        self.assertEqual(s.size, 10)
+
+        with self.assertRaises(TypeError):
+            s.size = "9"
 
 if __name__ == "__main__":
     unittest.main()

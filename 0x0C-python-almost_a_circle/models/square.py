@@ -19,7 +19,26 @@ class Square(Rectangle):
             id (int): The id of the Square. Defaults to None.
         """
         super().__init__(size, size, x, y, id)
+    @property
+    def size(self):
+        """
+        Getter method for the size attribute.
 
+        Returns:
+            int: The size of the Square.
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        Setter method for the size attribute.
+
+        Args:
+            value (int): The new size of the Square.
+        """
+        self.width = value
+        self.height = value
     def __str__(self):
         """
         Returns a string representation of the Square.
