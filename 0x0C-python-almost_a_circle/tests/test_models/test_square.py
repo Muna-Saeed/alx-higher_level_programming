@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Module for Square unit tests.'''
+"""Module for Square unit tests."""
 import unittest
 from models.base import Base
 from models.square import Square
@@ -29,7 +29,7 @@ class TestSquare(unittest.TestCase):
     def test_to_dictionary(self):
         s = Square(5, 2, 3, 1)
         s_dict = s.to_dictionary()
-        self.assertEqual(s_dict, {'id': 1, 'size': 5, 'x': 2, 'y': 3})
+        self.assertEqual(s_dict, {"id": 1, "size": 5, "x": 2, "y": 3})
         self.assertEqual(type(s_dict), dict)
 
     def test_string_representation(self):
@@ -74,6 +74,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s.height, 7)
         self.assertEqual(s.x, 3)
         self.assertEqual(s.y, 2)
+
 
 if __name__ == "__main__":
     unittest.main()

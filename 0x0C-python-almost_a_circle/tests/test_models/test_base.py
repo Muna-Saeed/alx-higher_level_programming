@@ -29,7 +29,6 @@ class TestBase(unittest.TestCase):
         b6 = Base()
         self.assertIsInstance(b6.id, int)
 
-    
     def test_to_json_string_empty(self):
         json_string = Base.to_json_string(None)
         self.assertEqual(json_string, "[]")
@@ -38,7 +37,9 @@ class TestBase(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_string = Base.to_json_string([dictionary])
-        self.assertEqual(json_string, '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]')
+        self.assertEqual(
+            json_string, '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]'
+        )
 
     def test_from_json_string_empty(self):
         list_objs = Base.from_json_string(None)
@@ -47,7 +48,9 @@ class TestBase(unittest.TestCase):
     def test_from_json_string(self):
         json_string = '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]'
         list_objs = Base.from_json_string(json_string)
-        self.assertEqual(list_objs, [{'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}])
+        self.assertEqual(
+            list_objs, [{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]
+        )
 
     def test_save_to_file_rectangle(self):
         r1 = Rectangle(10, 7, 2, 8)
@@ -56,8 +59,11 @@ class TestBase(unittest.TestCase):
 
         with open("Rectangle.json", "r") as file:
             json_data = file.read()
-            self.assertEqual(json_data, '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}, '
-                                         '{"x": 0, "width": 2, "id": 2, "height": 4, "y": 0}]')
+            self.assertEqual(
+                json_data,
+                '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}, '
+                '{"x": 0, "width": 2, "id": 2, "height": 4, "y": 0}]',
+            )
 
     def test_save_to_file_square(self):
         s1 = Square(5)
@@ -66,10 +72,11 @@ class TestBase(unittest.TestCase):
 
         with open("Square.json", "r") as file:
             json_data = file.read()
-            self.assertEqual(json_data, '[{"id": 1, "size": 5, "x": 0, "y": 0}, '
-                                         '{"id": 2, "size": 7, "x": 9, "y": 1}]')
-
-    
+            self.assertEqual(
+                json_data,
+                '[{"id": 1, "size": 5, "x": 0, "y": 0}, '
+                '{"id": 2, "size": 7, "x": 9, "y": 1}]',
+            )
 
     def test_create_rectangle(self):
         """Test create method for Rectangle"""
@@ -105,7 +112,9 @@ class TestBase(unittest.TestCase):
         self.assertEqual(len(list_rectangles_output), 2)
 
         """Check if loaded rectangles match original rectangles"""
-        for rect_input, rect_output in zip(list_rectangles_input, list_rectangles_output):
+        for rect_input, rect_output in zip(
+            list_rectangles_input, list_rectangles_output
+        ):
             self.assertIsInstance(rect_output, Rectangle)
             self.assertEqual(rect_input, rect_output)
             self.assertIsNot(rect_input, rect_output)
@@ -177,15 +186,20 @@ def test_csv_serialization_deserialization():
     for square in list_squares_output:
         print("[{}] {}".format(id(square), square))
 
+
 def test_drawing():
     """
     Test drawing rectangles and squares using Turtle graphics.
     """
-    list_rectangles = [Rectangle(100, 40), Rectangle(90, 110, 30, 10), Rectangle(20, 25, 110, 80)]
+    list_rectangles = [
+        Rectangle(100, 40),
+        Rectangle(90, 110, 30, 10),
+        Rectangle(20, 25, 110, 80),
+    ]
     list_squares = [Square(35), Square(15, 70, 50), Square(80, 30, 70)]
 
     Base.draw(list_rectangles, list_squares)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
