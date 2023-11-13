@@ -26,6 +26,12 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s.x, 3)
         self.assertEqual(s.y, 2)
 
+    def test_to_dictionary(self):
+        s = Square(5, 2, 3, 1)
+        s_dict = s.to_dictionary()
+        self.assertEqual(s_dict, {'id': 1, 'size': 5, 'x': 2, 'y': 3})
+        self.assertEqual(type(s_dict), dict)
+
     def test_string_representation(self):
         s = Square(5, 2, 3, 10)
         self.assertEqual(str(s), "[Square] (10) 2/3 - 5")
