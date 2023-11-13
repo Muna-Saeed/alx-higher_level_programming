@@ -25,6 +25,21 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def to_dictionary(self):
+        """
+        Returns the dictionary representation of the Rectangle.
+
+        Returns:
+            dict: The dictionary representation of the Rectangle.
+        """
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
+
     def update(self, *args, **kwargs):
         """
         Assigns arguments to the attributes of the Rectangle.
