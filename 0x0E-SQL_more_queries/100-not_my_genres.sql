@@ -1,5 +1,4 @@
 -- Use the hbtn_0d_tvshows database
-USE hbtn_0d_tvshows;
 
 -- Select all genres not linked to the show Dexter
 SELECT name
