@@ -1,7 +1,6 @@
--- Use the database hbtn_0d_usa
-USE hbtn_0d_usa;
+-- Task: List Cities by States
+-- This script lists all cities contained in the hbtn_0d_usa database with their corresponding state names.
 
--- Select cities.id, cities.name, and states.name and join cities and states tables
 SELECT cities.id, cities.name, states.name
 FROM cities
 JOIN states ON cities.state_id = states.id
