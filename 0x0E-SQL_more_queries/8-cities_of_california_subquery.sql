@@ -1,11 +1,8 @@
--- Use the database hbtn_0d_usa
-USE hbtn_0d_usa;
+-- Task: List Cities of California
+-- This script lists all the cities of California from the hbtn_0d_usa database.
 
--- Select the id of the state named California
-SET @california_id = (SELECT id FROM states WHERE name = 'California');
+-- Select the id of the California state from the states table
+SELECT id FROM states WHERE name = 'California' INTO @california_state_id;
 
--- Select all cities of California
-SELECT cities.id, cities.name
-FROM cities
-WHERE cities.state_id = @california_id
-ORDER BY cities.id ASC;
+-- Select the cities of California based on the state_id in the cities table
+SELECT id, name FROM cities WHERE state_id = @california_state_id ORDER BY id ASC;
