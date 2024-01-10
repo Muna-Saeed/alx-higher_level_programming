@@ -1,4 +1,3 @@
-```markdown
 # JavaScript Objects, Scopes, Closures
 
 This repository contains JavaScript code for handling objects, scopes, and closures. The project includes several tasks, each addressing specific concepts in JavaScript programming.
