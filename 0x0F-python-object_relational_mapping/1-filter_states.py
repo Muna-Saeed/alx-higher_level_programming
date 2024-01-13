@@ -14,11 +14,16 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+    db = MySQLdb.connect(
+            host="localhost", port=3306,
+            user=username, passwd=password, db=database
+            )
     cursor = db.cursor()
 
     # Execute SELECT query with a WHERE clause
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    cursor.execute(
+            "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+            )
 
     # Fetch all rows
     rows = cursor.fetchall()
