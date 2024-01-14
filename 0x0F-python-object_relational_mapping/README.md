@@ -120,4 +120,3 @@ Lists all State objects and corresponding City objects from the database.
 Lists all City objects from the database, including their associated State.
 
 Feel free to refer to the respective script files for detailed implementations of each task.
-```
