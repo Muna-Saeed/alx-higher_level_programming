@@ -2,6 +2,7 @@
 """script for finding peak in list of ints
 """
 
+
 def find_peak(list_of_integers):
     """
     Finds a peak in a list of unsorted integers.
@@ -18,7 +19,7 @@ def find_peak(list_of_integers):
             # If the mid element is greater than its right neighbor, move left
             high = mid
         else:
-            # If the mid element is less than or equal to its right neighbor, move right
+            # If the mid element is < or = to its right neighbor, move right
             low = mid + 1
 
     # At the end of the loop, low and high will be pointing to the peak element
