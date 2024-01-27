@@ -5,7 +5,6 @@ with an email as a parameter and then displays
 the body of the response.
 """
 
-
 import urllib.parse
 import urllib.request
 import sys
@@ -22,4 +21,4 @@ if __name__ == "__main__":
     with urllib.request.urlopen(url, data) as response:
         # Read and decode the response body
         body = response.read().decode('utf-8')
-        print("Your email is: {}".format(body))
+        print(body)       
