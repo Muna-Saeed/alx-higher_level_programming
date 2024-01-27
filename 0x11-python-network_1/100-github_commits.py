@@ -18,7 +18,9 @@ if __name__ == "__main__":
     owner_name = sys.argv[2]
 
     # GitHub API endpoint for commits
-    url = "https://api.github.com/repos/{}/{}/commits".format(owner_name, repo_name)
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+            owner_name, repo_name
+            )
 
     # Make a GET request to the GitHub API
     response = requests.get(url)
@@ -30,9 +32,16 @@ if __name__ == "__main__":
 
         # Prints the 10 most recent commits
         for commit in commits[:10]:
-            sha = commit.get('sha')
-            author_name = commit.get('commit', {}).get('author', {}).get('name', 'Unknown')
+            sha = commit.get("sha")
+            author_name = (
+                commit.get("commit", {})
+                .get("author", {})
+                .get("name", "Unknown")
+            )
             print("{}: {}".format(sha, author_name))
     else:
         # Print an error message if the request was not successful
-        print("Error: Unable to fetch commits. Status code:", response.status_code)
+        print(
+                "Error: Unable to fetch commits. Status code:",
+                response.status_code
+                )
