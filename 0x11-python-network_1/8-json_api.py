@@ -12,7 +12,7 @@ if __name__ == "__main__":
     q = sys.argv[1] if len(sys.argv) > 1 else ""
 
     # Define the payload
-    payload = {'q': q}
+    payload = {"q": q}
 
     # Make the POST request
     response = requests.post("http://0.0.0.0:5000/search_user", data=payload)
@@ -23,7 +23,10 @@ if __name__ == "__main__":
 
         # Check if JSON is not empty and properly formatted
         if json_response:
-            print("[{}] {}".format(json_response.get('id'), json_response.get('name')))
+            print("[{}] {}".format(
+                json_response.get("id"),
+                json_response.get("name")
+                ))
         else:
             print("No result")
     except ValueError:
